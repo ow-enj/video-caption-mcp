@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: video-caption-mcp
+    runtime: docker
+    plan: free
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false  # Set manually in Render dashboard
+      - key: BASE_URL
+        sync: false  # Set to your Render URL, e.g. https://video-caption-mcp.onrender.com
+      - key: WHISPER_MODEL
+        value: whisper-large-v3-turbo
+      - key: MAX_VIDEO_DURATION_SEC
+        value: "600"
+      - key: PORT
+        value: "8000"
